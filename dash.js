@@ -63,7 +63,6 @@ var atualizar = (tempo) => {
   minutos.textContent = formatarDigito(qtdMinutos);
   horas.textContent = formatarDigito(qtdHoras);
   dias.textContent = formatarDigito(qtdDias);
-  // console.log(segundos)
 }
 
 function contagemRegressiva(tempo) {
@@ -94,15 +93,7 @@ function setDataTime() {
   contagemRegressiva(tempoRestante(dataTimeValueMili));
 
   localStorage.setItem('dataTimeValue', dataTimeValue);
-
 }
 
-
-// var limpaStorage = function() {
-//   localStorage.removeItem("dataTimeValue");
-  
-//   return '';
-
-// };  
 
 
