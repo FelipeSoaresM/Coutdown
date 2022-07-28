@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Configurações</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="./Config.css" />
+</head>
+
+<body id="container" class="theme-light">
+	<div class="container">
+		<div class="navigation">
+			<div class="menu-toggle"></div>
+			<ul class="list">
+				<li class="list-item">
+					<img src="./file/timer.png">
+					<span class="text hide">Countdown</span>
+				</li>
+
+				<li class="list-item">
+					<img src="./file/gear.png">
+					<span class="text hide">Configurações</span>
+				</li>
+			</ul>
+		</div>
+		<main>
+
+			<div class="theme">
+				<div class="toggle">
+					<div class="container-toggle">
+						<img class="theme" src="./file/sun.svg" alt="">
+						<img class="theme" src="./file/moon.svg" alt="">
+					</div>
+					<div id="bolinha" class="bolinha"></div>
+				</div>
+			</div>
+
+			<div class="configuracao">
+				<label for="meeting-time">Escolha Data e Hora para o Evento:</label>
+
+				<input type="datetime-local" id="meeting-time" name="meeting-time" value="2022-07-21T19:30"
+					min="2022-07-21T00:00" max="2024-06-14T00:00">
+				<button onclick="setDataTime()" class="btn-set-cowntdown botao">Iniciar</button>
+			</div>
+		</main>
+	</div>
+
+</body>
+
+<script type="module" src="dash.js"></script>
+
+</html>

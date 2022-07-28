@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* light theme colors */
+.theme-light {
+    --fundo-: #DCE4E3;
+    --navigation: #084236;
+    --letraP: #3d3d3d;
+    --iniciar: #c5c5c5;
+
+}
+
+/* dark theme colors */
+.theme-dark {
+    --fundo-: #3d3d3d;
+    --navigation: #18C29C;
+    --letraP: #DCE4E3;
+    --iniciar: black;
+
+}
+
+.container {
+    display: flex;
+    background-color: var(--fundo-);
+    height: 100%;
+    width: 100%;
+    grid-template-columns:
+        "navigation main";
+    position: absolute;
+    z-index: 0;
+
+}
+
+
+
+main {
+    margin: 0 10px 0 100px;
+    position: absolute;
+    background-color: var(--fundo-);
+    height: 100%;
+    width: 90vw;
+    z-index:1;
+
+}
+
+.navigation {
+    margin-left: 20px;
+    border-radius: 10px;
+    display: fixed;
+
+    width: 70px;
+    background-color: var(--navigation);
+    display: flex;
+    z-index: 4;
+}
+ 
+
+.navigation.open {
+    width: 250px;
+    z-index: 5;
+}
+
+.navegation-item {
+    display: flex;
+    position: initial;
+    z-index: 5;
+}
+
+.navigation .menu-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 50px;
+    border-bottom: 1px solid (0, 0, 0, 0);
+    cursor: pointer;
+    display: flex;
+    margin-left: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.navigation .menu-toggle::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #c5c5c5;
+    transform: translateY(-8px);
+    transition: 0.5s;
+}
+
+.navigation.open .menu-toggle::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.navigation .menu-toggle::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #c5c5c5;
+    transform: translateY(8px);
+    transition: 0.5s;
+    box-shadow: 0 -8px 0 #c5c5c5;
+}
+
+.navigation.open .menu-toggle::after {
+    transform: translateY(0) rotate(-45deg);
+    box-shadow: none;
+}
+
+.navigation ul {
+    margin: 50px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+}
+
+
+
+.navigation ul li {
+
+    list-style: none;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navigation ul li.active {
+    transform: translateX(30px);
+}
+
+.navigation.open ul li.active {
+    transform: translateX(10px);
+}
+
+.hide {
+    display: none;
+    cursor: pointer;
+}
+
+img {
+    margin-left: 15px;
+    align-items: center;
+    justify-content: column;
+    cursor: pointer;
+    z-index: 0;
+   
+
+}
+
+svg {
+    cursor: default;
+}
+
+.toggle {
+    margin-left: 90%;
+    z-index: 2;
+}
+
+.container-toggle {
+    display: flex;
+    justify-content: space-between;
+    background-color: #084236;
+    margin: 10px 2px;
+    width: 60px;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+
+.bolinha {
+    width: 22px;
+    height: 22px;
+    background-color: #DCE4E3;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    top: -33px;
+    margin-left: 4px;
+    transition: 0.4s ease;
+}
+
+.bolinha.on {
+    position: relative;
+    transform: translate(34px);
+    transition: 0.5s ease;
+}
+
+.theme {
+    margin-left: 1px;
+}
+
+span.text {
+    font-family: 'Poppins', sans-serif;
+    ;
+    margin: 0 0 0 15px;
+    font-size: 20px;
+    color: #c5c5c5;
+    cursor: pointer;
+}
+
+
+
+.countdown {
+    margin: 200px 0px 70px 40px;
+    /* border:  4px dashed red; */
+    height: 80%;
+    width: 75vw;
+    display: flex;
+    z-index: 0;
+    cursor: default;
+    z-index: 1;
+}
+
+.foguete {
+    margin: 0px 0px 0px 500px;
+    display: flex;
+    z-index: 1;
+}
+
+
+
+h1 {
+    /* border: 2px dashed crimson; */
+    width: 500px;
+    font-family: 'Poppins', sans-serif;
+    color: #6C63FF;
+    display: flex;
+    margin: -480px 0 0 210px;
+    z-index: -1;
+}
+
+.contador {
+    display: absolute;
+    margin: 120px 0 0 210px;
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+h2 {
+    color: #6C63FF;
+    font-size: 60px;
+    margin-top: -80px;
+    z-index: 0;
+}
+
+p {
+    color: var(--letraP);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.button.p {
+
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.rd_tabs {
+    display: none;
+}
+
+.rd_tabs:checked~.content {
+    display: block;
+}
+
+.content {
+
+    display: none;
+    position: absolute;
+
+}
+
+
+
+article {
+    cursor: default;
+    position: absolute;
+    margin: -180px 0 0 40px;
+    z-index: 0;
+}
+
+/* CONFIGURAÇÃO */
+.art-confg {
+    width: 30vw;
+    display: flex;
+    position: absolute;
+    margin: -30px 0 0 250px;
+    cursor: default;
+}
+
+.configuraçao {
+    z-index: 0;
+    margin: -280px 0px 0 250px;
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+}
+
+label {
+    cursor: default;
+    color: var(--letraP);
+    align-items: center;
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    font-family: 'Poppins', sans-serif;
+    margin: .4rem 0;
+}
+
+input {
+    cursor: pointer;
+    margin: 0 100px 0 0px;
+}
+
+.botao {
+    cursor: pointer;
+    display: flex;
+    margin: 2rem 80px;
+    margin: -30px 0 0 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+button {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: #084236;
+    border-radius: 20px;
+    background-color: var(--navigation);
+    color: var(--iniciar);
+    height: 30px;
+    width: 80px;
+}
+
+button:hover {
+    background-color: var(--letraP);
+    cursor: pointer;
+}
+
+.btn-set-cowntdown .botao {
+    display: flex;
+}
