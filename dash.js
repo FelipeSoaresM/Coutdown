@@ -1,3 +1,4 @@
+// guarda informações da configuração de horário no Local Storage
 if (localStorage.length) {
   var local = localStorage.getItem('dataTimeValue')
   document.querySelector('#meeting-time').value = local;
